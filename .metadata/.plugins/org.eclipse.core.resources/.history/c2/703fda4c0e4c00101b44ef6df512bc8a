@@ -1,0 +1,7 @@
+package enum1;
+
+public class PowerStateTest {
+	public static void main(String[] args) {
+		
+	}
+}

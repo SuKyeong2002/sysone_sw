@@ -1,0 +1,6 @@
+package oop11b;
+
+// Simple factory pattern
+public class TVFactory {
+	
+}

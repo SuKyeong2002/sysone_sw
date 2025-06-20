@@ -1,0 +1,22 @@
+package oop11b;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class productHeader {
+	// simple factory pattern : 구조 안에서 설정값을 알기 위한 책임을 분리해낸 유틸리터 클래스
+	private static Properties props = new Properties();
+	
+	static {
+		try {
+		props.load(FileInputStream("src/oop11b/product.properties"));
+		} catch (Exception e){
+			e.printStackTrce();
+		}
+	}
+
+	public static String getValue(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

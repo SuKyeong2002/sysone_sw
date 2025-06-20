@@ -1,0 +1,5 @@
+package sec05_threadstates.EX01_NewRunnableTerminated;
+
+public class NewRunnableTerminated {
+
+}

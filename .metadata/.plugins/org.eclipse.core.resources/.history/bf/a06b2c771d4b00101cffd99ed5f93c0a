@@ -1,0 +1,15 @@
+package oop11b;
+
+// Simple factory pattern
+public class TVFactory {
+	public static TV getTV() {
+		String tvClassName;
+		try {
+			tvClassName = productHeader.getValue("tv");
+			return (TV) Class.forName(tvClassName).getDeclaredConstructor().newInstance();
+		} catch (Exception e) {
+			System.out.println(tvClassName + "이 ");
+		}
+		return null;
+	}
+}

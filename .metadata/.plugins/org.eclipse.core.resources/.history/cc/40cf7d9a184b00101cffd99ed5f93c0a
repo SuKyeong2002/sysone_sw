@@ -1,0 +1,17 @@
+package oop11b;
+
+public class HarmanSpeaker implements Speaker {
+
+	@Override
+	public void soundUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void soundDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

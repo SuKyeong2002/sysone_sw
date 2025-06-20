@@ -1,0 +1,7 @@
+package sec04_annoymousclass.EX01_AnonymousClass_1;
+
+public class AnonymousClass_1 {
+	public static void main(String[] args) {
+		
+	}
+}

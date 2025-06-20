@@ -1,0 +1,11 @@
+package exception;
+
+import java.util.Random;
+
+public class ExceptionTest5 {
+	public static void main(String[] args) {
+//		int n = (int) (Math.random() * 99) + 1;
+		Random random = new Random();
+		int n = random.nextInt(99) + 1;
+	}
+}

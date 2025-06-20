@@ -1,0 +1,5 @@
+package thread0;
+
+public class DeadLockTest {
+
+}

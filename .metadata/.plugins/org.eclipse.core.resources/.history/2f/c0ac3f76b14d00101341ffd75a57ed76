@@ -1,0 +1,12 @@
+package sec01_l.ist.EX05_LinkedListMethod;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class LinkedListMethod {
+	public static void main(String[] args) {
+		List<Integer> linkedList1 = new LinkedList<Integer>();
+		
+		
+	}
+}

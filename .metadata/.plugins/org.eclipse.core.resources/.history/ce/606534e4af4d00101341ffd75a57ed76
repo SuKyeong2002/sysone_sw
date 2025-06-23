@@ -1,0 +1,10 @@
+package sec01_l.ist.EX04_VectorMethod;
+
+import java.util.List;
+import java.util.Vector;
+
+public class VectorMethod {
+	public static void main(String[] args) {
+		List<Integer> vector1 = new Vector<Integer>();
+	}
+}

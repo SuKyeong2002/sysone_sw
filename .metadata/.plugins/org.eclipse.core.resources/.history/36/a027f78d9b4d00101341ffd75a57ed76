@@ -1,0 +1,11 @@
+package sec04_boundedtype.EX02_BoundedTypeOfGenericMethod;
+
+class A {
+	
+}
+
+public class BoundedTypeOfGenericMethod {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+         // txt1의 부모 
+        $(".txt1").parent()
+        .css("border", "2px dashed #00f");
+
+         // txt2의 부모 중 div만
+        $(".txt2").parent("div")
+        .css("border", "2px dashed #f00");
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+    <h1 class="title">선택자</h1>
+    <section>
+        <div>
+            <p class="txt1">내용</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p class="txt2">내용</p>
+        </div>
+    </section>
+    </div>
+</body>

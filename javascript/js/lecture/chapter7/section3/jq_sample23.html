@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // 무리에서 각각의 첫 번째에 위치한 li 태그 선택
+        $("li:first-of-type")
+        .css("background-color", "#ff0");
+
+        // 무리에서 각각의 마지막 번째에 위치한 li 태그 선택
+        $("li:last-of-type")
+        .css("background-color", "#0ff");
+    });
+    </script>
+</head>
+<body>
+    <h1 class="title">탐색 선택자</h1>
+    <ul>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+    </ul>
+    <ul>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+</body>

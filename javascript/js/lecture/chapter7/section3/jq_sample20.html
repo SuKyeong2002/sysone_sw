@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // 선택한 요소 중 첫 번째 요소만 선택
+        $("#menu li:first")
+        .css("border", "2px dashed #f00");
+    });
+    </script>
+</head>
+<body>
+    <h1 class="title">탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>

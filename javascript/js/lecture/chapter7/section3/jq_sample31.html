@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // 선택한 <p> 요소 중 숨어 있는 상태의 요소만 선택
+        $("#wrap p:hidden").css({
+            "display": "block",
+            "background": "#ff0"
+        });
+
+        // id 값이 'zone1'인 요소의 하위 <select> 요소 중 선택된 selected된 <option> 요소만 선택
+        var z1 = $("#zone1 :selected").val();
+        console.log(z1);
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <p>내용1</p>
+        <p style="display: none">내용2</p>
+        <p>내용3</p>
+    </div>
+    <form action="#">
+        <p id="zone1">
+            <option value="opt1">옵션1</option>
+            <option value="opt2" selected>옵션2</option>
+            <option value="opt3">옵션3</option>
+        </p>
+        <p id="zone2">
+            <option type="checkbox" name="hobby1" value="독서">독서</option>
+            <option type="checkbox" name="hobby2" value="자전거">자전거</option>
+            <option type="checkbox" name="hobby3" value="등산" checked>등산</option>
+        </p>
+        <p id="zone3">
+            <option type="radio" name="gender" value="male">남성</option>
+            <option type="radio" name="gender" value="female" checked>여성</option>
+        </p>
+    </form>
+</body>

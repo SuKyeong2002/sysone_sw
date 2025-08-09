@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // 선택한 요소 중 지정한 인덱스가 참조하는 요소만 선택
+        $("#menu li:eq(2)")
+        .css("background-color", "#ff0");
+
+        // 선택한 요소 중 지정한 인덱스 보다 작은 인덱스를 참조하는 요소만 선택
+        $("#menu li:lt(2)")
+        .css("background-color", "#0ff");
+
+        // 선택한 요소 중 지정한 인덱스 보다 큰 인덱스를 참조하는 요소만 선택
+        $("#menu li:gt(2)")
+        .css("background-color", "#f0f");
+    });
+    </script>
+</head>
+<body>
+    <h1 class="title">탐색 선택자</h1>
+    <ul id="menu">
+        <li>내용1</li>
+        <li>내용2</li>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>

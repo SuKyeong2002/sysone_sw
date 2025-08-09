@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        var arr1 = [ "서울", "대전", "부산", "전주" ];
+        var arr2 = [ "한국", "미국", "일본", "대전" ];
+        var obj = {
+            "name": "정부장",
+            "area": "서울"
+        }
+        
+        // 배열에 저장된 데이터 중 지정한 데이터를 인덱스 오름차순으로 찾아 먼저 찾은 데이터의 인덱스값 반환
+        var idxNum = $.inArray("부산", arr1);
+        console.log(idxNum);    // 2
+
+        // 지정한 객체가 배열 객체면 true, 아니면 false 반환
+        var okArray1 = $.isArray(arr1);
+        var okArray2 = $.isArray(obj);
+        console.log(okArray1);  // 배열 객체면 true
+        console.log(okArray2);  // 배열 객체가 아니면 false
+
+        // 두 배열 객체를 하나의 배열 객체로 묶음
+        $.merge(arr2, arr1);
+        console.log(arr2);  // ["한국", "미국", "일본", "대전", "서울", "대전", "부산", "전주"]
+    });
+    </script>
+</head>
+<body>
+</body>

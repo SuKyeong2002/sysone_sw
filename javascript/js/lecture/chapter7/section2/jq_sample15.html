@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        var style_1 = {
+            "background-color": "#0ff",
+            "border": "2px dashed #f00"
+        }
+        var style_2 = {
+            "background-color": "#ff0",
+            "border": "2px dashed #f00"
+        }
+
+         // 인접 관계 선택자, 내용1
+        $(".txt").prevAll()
+        .css(style_1);
+
+         // 내용3, 내용4
+        $(".txt").nextAll()
+        .css(style_2);
+        
+    });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+    <h1>인접 관계 선택자</h1>
+    <p>내용1</p>
+    <p class="txt">내용2</p>
+    <p>내용3</p>
+    <p>내용4</p>
+    </div>
+</body>

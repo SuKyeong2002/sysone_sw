@@ -1,5 +1,0 @@
-package sec05_threadstates.EX02_YieldInRunnableState;
-
-public class YieldInRunnableState {
-
-}

@@ -1,7 +1,0 @@
-package sec01_list.EX06_ArrayListVsLinkedList;
-
-public class ArrayListVsLinkedList {
-	public static void main(String[] args) {
-		
-	}
-}

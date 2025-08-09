@@ -1,7 +1,0 @@
-package sec01_l.ist.EX01_ArrayVsList;
-
-public class ArrayVsList {
-	public static void main(String[] args) {
-
-	}
-}

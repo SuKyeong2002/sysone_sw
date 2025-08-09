@@ -1,9 +1,0 @@
-package oop11b;
-
-// 표준 Speaker
-public interface Speaker {
-
-	public void soundUp();
-
-	public void soundDown();
-}

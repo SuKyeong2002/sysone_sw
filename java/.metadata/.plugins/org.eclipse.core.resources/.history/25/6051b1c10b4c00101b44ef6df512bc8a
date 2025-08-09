@@ -1,7 +1,0 @@
-package sec05_innerinterfacce.EX02_ButtonAPIExample;
-
-public class ButtonAPIExample {
-	public static void main(String[] args) {
-		Button btn1 = new Button();
-	}
-}

@@ -10,8 +10,16 @@
         var result_1 = $("#sec_1").html();
         console.log(result_1);  
 
-        // 
+        // id값이 'sec_1'인 요소의 하위 요소 중 <p> 요소의 하위 요소를 새 요소로 바꿈
         $("#sec_1 p").html("<a href=\"#\">Text1</a>");
+
+        // id값이 'sec_2'인 요소의 텍스트를 result_2에 저장
+        var result_2 = $("#sec_2").text();
+        console.log(result_2); 
+
+        // id값이 'sec_2'인 요소의 하위 요소 중 <h2> 요소의 하위 요소를 모두 제거
+        // 이후 다음 새로운 텍스트 생성
+        $("#sec_2 h2").text("text( )");
     })
     </script>
 </head>

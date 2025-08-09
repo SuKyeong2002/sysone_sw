@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>객체 조작</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // id 값이 'sec_1'인 요소의 하위 <img> 요소를 선택하여 'src' 값을 srcVal에 저장
+        var srcVal = $("#sec_1 img").attr("src");
+        console.log(srcVal);
+
+        // id 값이 'sec_1'인 요소의 하위 <img> 요소를 선택하여 각각의 값을 지정한 값으로 바꾸거나 새로 지정
+        $("#sec_1 img")
+        .attr({
+            "width": 200,
+            "src": srcVal.replace("1.png", "2.png"),
+            "alt": "바위"
+        })
+        .removeAttr("border");
+    })
+    </script>
+</head>
+<body>
+    <h1>
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <section id="sec_1">
+        <h2>
+            이미지 속성
+        </h2>
+        <p>
+            <img src="../images//math_img_1.png" alt="가위" border="2"> 
+        </p>
+    </section>
+</body>

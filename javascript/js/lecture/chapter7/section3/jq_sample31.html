@@ -15,6 +15,14 @@
         // id 값이 'zone1'인 요소의 하위 <select> 요소 중 선택된 selected된 <option> 요소만 선택
         var z1 = $("#zone1 :selected").val();
         console.log(z1);
+
+        // id 값이 'zone2'인 요소의 하위 <input> 요소 중 선택된 checked된 <input> 요소만 선택
+        var z2 = $("#zone2 :checked").val();
+        console.log(z2);
+
+        // id 값이 'zone3'인 요소의 하위 <input> 요소 중 선택된 checked된 <input> 요소만 선택
+        var z3 = $("#zone3 :checked").val();
+        console.log(z3);
     });
     </script>
 </head>
@@ -26,18 +34,20 @@
     </div>
     <form action="#">
         <p id="zone1">
-            <option value="opt1">옵션1</option>
-            <option value="opt2" selected>옵션2</option>
-            <option value="opt3">옵션3</option>
+            <select name="course" id="course">
+                <option value="opt1">옵션1</option>
+                <option value="opt2" selected>옵션2</option>
+                <option value="opt3">옵션3</option>
+            </select>
         </p>
         <p id="zone2">
-            <option type="checkbox" name="hobby1" value="독서">독서</option>
-            <option type="checkbox" name="hobby2" value="자전거">자전거</option>
-            <option type="checkbox" name="hobby3" value="등산" checked>등산</option>
+            <input type="checkbox" name="hobby1" value="독서">독서</input>
+            <input type="checkbox" name="hobby2" value="자전거">자전거</input>
+            <input type="checkbox" name="hobby3" value="등산" checked>등산</input>
         </p>
         <p id="zone3">
-            <option type="radio" name="gender" value="male">남성</option>
-            <option type="radio" name="gender" value="female" checked>여성</option>
+            <input type="radio" name="gender" value="male">남성</input>
+            <input type="radio" name="gender" value="female" checked>여성</input>
         </p>
     </form>
 </body>

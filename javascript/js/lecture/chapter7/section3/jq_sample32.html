@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>선택자</title>
+    <script src="../../../jquery.js">
+    </script>
+    <script>
+    $(function(){
+        // 선택한 <p> 요소 중 '내용1'을 포함하는 요소만 선택
+        $("#inner_1 p:contains(내용1)")
+        .css({"background-color": "#ff0"})
+
+        // 선택한 <p> 요소 중 <strong> 요소를 포함하는 요소만 선택
+        $("#inner_1 p:has(strong)")
+        .css({"background-color": "#0ff"})
+
+        // id값이 'outer_wrap'인 요소의 하위 요소 텍스트와 태그 노드 선택
+        $("#outer_wrap").contents()
+        .css({"border": "1px dashed #00f"})
+
+        // id값이 'inner_2'인 요소의 하위 <p> 요소에서 첫 번째 요소만 제외하고 선택
+        $("#inner_2 p").not(":first")
+        .css({"background-color": "#0f0"})
+
+        // id값이 'inner_2'인 요소의 하위 <p> 요소에서 인덱스가 2인 요소 선택
+        // end() 메서드 적용해서 인덱스 선택 전 선택자 적용
+        $("#inner_2 p").eq(2).end()
+        .css({"color": "#f00"})
+    });
+    </script>
+</head>
+<body>
+    <div id="outer_wrap">
+    <h1>콘텐츠 탐색 선택자</h1>
+    <section id="inner_1">
+        <h1>contains(), contents(), has()</h1>
+        <p>
+            <span>내용1</span>
+        </p>
+        <p>
+            <strong>내용2</strong>
+        </p>
+        <p>
+            <span>내용3</span>
+        </p>        
+    </section>
+    <section id="inner_2">
+        <h1>not(), end()</h1>
+        <p>
+            내용4
+        </p>
+        <p>
+            내용5
+        </p>
+        <p>
+            내용6
+        </p>        
+    </section>
+    </div>
+</body>

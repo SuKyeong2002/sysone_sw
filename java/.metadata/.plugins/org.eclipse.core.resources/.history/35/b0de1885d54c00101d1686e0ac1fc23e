@@ -1,0 +1,21 @@
+package sec04_synchronizedmethodandblock.EX01_TheNeedsForSynchronized;
+
+public class TheNeedsForSynchronized {
+	public static void main(String[] args) {
+		// 공유 객체 생성
+		MyData myData = new MyData();
+	
+		// plusThread 1
+		Thread plusThread1 = new PlusThread(myData);
+		plusThread1.setName("plusThread1");
+		plusThread1.start();
+		
+		
+		try {Thread.sleep(1000);} catch (InterruptedExcaption e) {}  // 1초 기다림
+		
+		// plusThread 2
+		Thread plusThread2 = new PlusThread(myData);
+		plusThread2.setName("plusThread2");
+		plusThread2.start();
+	}
+}

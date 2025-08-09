@@ -1,0 +1,27 @@
+package sec02_genericcl.ass.EX01_SingleGenericArgument;
+
+
+class MyClass<T> {
+	private T t;
+	public T get() {
+		return t;
+	}
+	public void set(T t) {
+		this.t = t;
+	}
+}
+
+public class SingleGenericArgument {
+	public static void main(String[] args) {
+		
+		// String 타입을 저장하거나 꺼내올 수 있는 객체 지정
+		MyClass<String> mc1 = new MyClass<String>();
+		mc1.set("안녕");
+		System.out.println(mc1.get());
+		
+		// String 타입을 저장하거나 꺼내올 수 있는 객체 지정
+		MyClass<Integer> mc2 = new MyClass<Integer>();
+		mc2.set("안녕");
+		System.out.println(mc1.get());
+	}
+}

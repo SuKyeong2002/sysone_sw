@@ -1,0 +1,44 @@
+package sec04_userexception.EX01_CreateUserException;
+
+// 1. 사용자 일반 예외
+class MyException extends Exception {
+	public MyException() {
+		super();
+	}
+
+	public MyException(String message) {
+		super(message);
+	}
+}
+
+// 2. 사용자 실행예외
+class MyRTException extends RuntimeException {
+	public MyRTException() {
+		super();
+	}
+
+	public MyRTException(String message) {
+		super(message);
+	}
+}
+
+class A {
+	MyException me1 = new MyException();
+	MyException me2 = new MyException("예외 메시지: MyException");
+
+	MyRTException mre1 = new MyRTException();
+	MyRTException mre2 = new MyRTException("예외 메시지 : MyRTException");
+
+	void abc(int num) {
+		try {
+			if (num > 90);
+				System.out.println("정상 작동");
+		}
+	}
+}
+
+public class CreateUserException {
+	public static void main(String[] args) {
+
+	}
+}]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]

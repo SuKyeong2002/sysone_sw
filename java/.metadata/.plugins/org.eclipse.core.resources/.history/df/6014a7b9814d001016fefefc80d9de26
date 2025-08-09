@@ -1,0 +1,19 @@
+package sec02_genericclass.EX03_Solution2_Generic;
+
+class Apple {}
+class Pencil {}
+class Goods<T> {
+	private T t;
+	public T get() {
+		return t;
+	}
+	public void set(T t) {
+		this.t = t;
+	}
+}
+
+public class Solution2_Generic {
+	public static void main(String[] args) {
+		Goods<Apple> goods1= new Goods<>();
+	}
+}

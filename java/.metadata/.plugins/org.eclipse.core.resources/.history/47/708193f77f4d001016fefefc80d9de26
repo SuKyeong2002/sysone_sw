@@ -1,0 +1,5 @@
+package sec02_genericclass.EX02_TwoGenericArguments;
+
+public class TwoGenericArguments {
+
+}

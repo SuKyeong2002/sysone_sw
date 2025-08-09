@@ -1,0 +1,17 @@
+package oop11b;
+
+// 표준 // TV 인터페이스 구현
+public interface Speaker {
+	
+	public void powerOn();
+
+	public void powerOff();
+
+	public void channelUp();
+
+	public void channelDown();
+
+	public void soundUp();
+
+	public void soundDown();
+}

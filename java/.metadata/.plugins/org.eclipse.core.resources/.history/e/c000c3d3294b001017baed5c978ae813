@@ -1,0 +1,23 @@
+package sec01_typeofexception.EX01_CheckedException;
+
+import java.io.InputStreamReader;
+
+class A implements Cloneable {
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+}
+
+public class CheckedException {
+	public static void main(String[] args) {
+		// 1. InterruptedException
+		Thread.sleep(1000);
+		
+		// 2. ClassNotFoundException
+		Class cls = Class.forName("java.lang.Object");
+		
+		// 3. IOException
+		InputStreamReader in new InputStreanReder(System.in);
+		in.read();
+	}
+}

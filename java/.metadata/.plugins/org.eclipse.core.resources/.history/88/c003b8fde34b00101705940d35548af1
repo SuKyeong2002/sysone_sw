@@ -1,0 +1,55 @@
+package exception;
+
+import java.util.Random;
+import java.util.Scanner;
+
+// updown 게임
+public class ExceptionTest5 {
+	public static void main(String[] args) {
+//		int n = (int) (Math.random() * 99) + 1;
+		Random random = new Random();
+		int n = random.nextInt(99) + 1;
+		int you = 0;
+		int count = 0; // 시도 횟수
+
+		try (Scanner sc = new Scanner(System.in)) {
+			while (true) {
+				System.out.print("1부터 99 사이의 정수를 입력하세요 > ");
+				count += 1;
+				if (!sc.hasNextInt()) {
+					System.out.println("값이 잘못 입력되었습니다.");
+					sc.nextLine();
+					continue;
+				}
+				you = sc.nextInt();
+				sc.nextLine();
+
+				if (!(1 <= you && you <= 99)) {
+					System.out.println("값의 범위가 틀렸습니다. 1 <= x <= 99 사이의 정수를 입력하세요.");
+				} else if (you != n) {
+					System.out.println("입력값은 " + you + "입니다.");
+				} else {
+					System.out.println("맞았습니다. 컴퓨터가 생각했던 값은 " + n + "입니다.");
+					switch (count) {
+					case 1:
+					case 2:
+					case 3:
+					case 4: 
+						System.out.println(count + ": Great~!");
+					case 5:
+					case 6:
+					case 7:
+					case 8: 
+						System.out.println(count + ": Good~!");
+					default: 
+						System.out.println("분발을 요구함...");
+					}
+				case 3:case 3:case 3:
+					break;
+				}
+			}
+		}
+
+		System.out.println("종료");
+	}
+}

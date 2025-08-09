@@ -1,0 +1,11 @@
+package sec02_exceptionhandlingstntax.EX01_TryCatchFinally;
+
+public class TryCatchFinally {
+	public static void main(String[] args) {
+		
+		try {
+			System.out.println(3/0);
+			System.out.println("프로그램 종료");
+		}
+	}
+}

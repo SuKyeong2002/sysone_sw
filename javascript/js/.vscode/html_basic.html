@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="style.css" type="text/css"> !-->
+    <style>
+        @import url("style.css");
+        /* 
+        * 요소 단위로 스타일을 재정의 
+        * 선택자(selector) { 속성(property): 값(value) } 
+        */
+        h1 { 
+            color: cornflowerblue; 
+            font-size: 50px; 
+            font-family: '궁서체';
+        }
+        /* .class : 복수 */
+        .title {
+            color: blueviolet;
+            font-size: 60px;
+        }
+        /* #id : 단수*/
+        #title {
+            color: brown;
+            font-size: 30px;
+        }
+        /* 속성 선택자 : 속성 존재 여부 */
+        li[title] {
+            color: orange;
+        }
+        li[title='할인'] {
+            color: red;
+        }
+        li[title~='무료배송']::after {
+            content: ' [무료배송]';
+        }
+        li[title~='품절'] {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <!-- 요소 (element): tag content -->
+    <h1 class="title">HTML Basic</h1>
+    <h1>HTML Basic</h1>
+    <h1 class="title">HTML Basic</h1>
+    <h1 id="title">HTML Basic</h1>
+    <h1>HTML Basic</h1>
+    <font face="궁서체" size="7" color="green">
+        HTML Basic
+    </font>
+    <!-- 속성(attribute)를 이용하여 부가정보 표현 -->
+
+    <button type="button" onclick="changeContent()">
+        내용 바꾸기
+    </button>
+
+    <ol>
+        <li title="">사과</li>
+        <li title="할인 품절">배</li>
+        <li title="할인 무료배송">바나나</li>
+        <li title="무료배송 품절">수박</li>
+        <li title="hot 무료배송">복숭아</li>            <li><a href="#" target="_blank" data-url="">외부 쇼핑</a></li>
+    </ol>
+
+    <script>
+        // 이벤트 헨들러(콜백함수)
+        function changeContent() {
+            document.getElementById('title').innerText = 'HTML 기본';
+        }
+
+        $('li[title~="품절"]').on('click', function() {
+            alert("품절입니다.");
+        })
+    </script>
+</body>
+</html>

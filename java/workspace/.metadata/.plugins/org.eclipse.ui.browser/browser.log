@@ -1,0 +1,32 @@
+
+8월 14, 2025 16:33:47.09 NEW SESSION
+8월 14, 2025 16:33:47.13 [9228:14032:0814/163347.092:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:33:48.63 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+8월 14, 2025 16:33:48.63 I0000 00:00:1755156828.637037   23784 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+8월 14, 2025 16:33:50.79 Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 14, 2025 16:34:14.39 [9228:14032:0814/163414.392:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:35:05.36 [9228:14032:0814/163505.365:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:36:44.24 [9228:14032:0814/163644.249:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:39:44.90 [9228:14032:0814/163944.908:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:43:07.15 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+8월 14, 2025 16:43:07.15 I0000 00:00:1755157387.153734   20604 voice_transcription.cc:58] Registering VoiceTranscriptionCapability
+8월 14, 2025 16:43:07.26 Created TensorFlow Lite XNNPACK delegate for CPU.
+8월 14, 2025 16:43:07.27 [6824:3624:0814/164307.275:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:43:32.01 [6824:3624:0814/164332.010:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:44:17.25 [6824:3624:0814/164417.253:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:46:03.84 [6824:3624:0814/164603.845:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:49:08.61 [6824:3624:0814/164908.609:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 16:56:58.12 [6824:3624:0814/165658.122:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 14, 2025 19:29:15.46 [6824:3624:0814/192915.457:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+8월 15, 2025 05:46:20.10 [6824:3624:0815/054620.089:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+8월 15, 2025 05:46:20.16 [6824:3624:0815/054620.162:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -105
+8월 15, 2025 05:46:20.30 [6824:2056:0815/054620.303:ERROR:components\sync\engine\get_updates_processor.cc:267] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_NAME_NOT_RESOLVED)
+8월 16, 2025 14:41:05.69 [6824:3624:0816/144105.689:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -105
+8월 16, 2025 14:41:05.93 [6824:3624:0816/144105.937:ERROR:google_apis\gcm\engine\registration_request.cc:274] Registration URL fetching failed.
+8월 16, 2025 14:41:05.94 [6824:17208:0816/144105.941:ERROR:components\sync\engine\get_updates_processor.cc:267] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_NAME_NOT_RESOLVED)
+8월 16, 2025 14:41:06.52 [6824:3624:0816/144106.527:ERROR:google_apis\gcm\engine\connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -105
+8월 16, 2025 14:41:09.84 [6824:3624:0816/144109.842:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+8월 16, 2025 14:41:33.52 Attempting to use a delegate that only supports static-sized tensors with a graph that has dynamic-sized tensors (tensor#-1 is a dynamic-sized tensor).
+8월 16, 2025 14:41:36.91 Client requested cancel during Invoke()
+8월 16, 2025 14:41:39.34 Client requested cancel during Invoke()
+8월 16, 2025 14:41:39.35 [6824:3624:0816/144139.358:ERROR:google_apis\gcm\engine\registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

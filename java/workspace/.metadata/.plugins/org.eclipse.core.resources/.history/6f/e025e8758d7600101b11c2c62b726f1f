@@ -1,0 +1,7 @@
+package app.labs.ex01;
+
+public class TakeTransTest {
+	Passanger pass1 = new PassangerImpl(1, "승객1", 10000);
+	
+	Transportation bus100 = new Bus(100);
+}

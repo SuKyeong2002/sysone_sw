@@ -1,0 +1,11 @@
+package app.labs.servlet;
+
+public class CalcService {
+	private int result = 0;
+	
+	// 생성자
+	pulic CalcService() {
+		
+	}
+
+}

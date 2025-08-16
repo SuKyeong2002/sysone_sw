@@ -1,0 +1,5 @@
+package app.labs.ex02.dp02;
+
+public abstract class RunningRace {
+
+}

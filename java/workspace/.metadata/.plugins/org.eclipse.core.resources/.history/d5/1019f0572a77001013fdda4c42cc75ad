@@ -1,0 +1,10 @@
+package app.labs.ex02.dp02;
+
+// 추상 class
+public abstract class RunningRace {
+	
+	// 추상 method
+	private void ready() {
+		System.out.println("준비");
+	}
+}

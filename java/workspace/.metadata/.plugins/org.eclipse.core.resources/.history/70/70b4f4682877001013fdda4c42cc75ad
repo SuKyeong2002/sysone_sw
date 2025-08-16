@@ -1,0 +1,11 @@
+package app.labs.ex02.dp01;
+
+public class SignletonTest {
+	public static void main(String[] args) {
+		
+		// class method -> class 
+		Singleton singleton = Singleton.getInstance();
+		singleton.showCount();
+				
+	}
+}

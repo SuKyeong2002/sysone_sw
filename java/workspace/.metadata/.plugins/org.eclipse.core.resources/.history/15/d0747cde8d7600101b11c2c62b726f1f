@@ -1,0 +1,21 @@
+package app.labs.ex01;
+
+public class Bus implements TransPortation{
+    
+    private int busNumber;
+    private int passengerCount;
+    private int money;
+
+    @Override
+    public void getIn(Passanger pass) {
+        this.passengerCount++;
+        this.money += 1000;
+        pass.withdraw(1000);
+    }
+
+    @Override
+    public void getOut(Passanger pass) {
+        
+    }
+
+}

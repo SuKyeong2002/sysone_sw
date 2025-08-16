@@ -1,0 +1,41 @@
+package app.labs.ex01;
+
+public class Subway implements Transportation{
+     
+	private int lineNumber;
+    private int passengerCount;
+    private int money;
+    
+    
+
+	public Subway(int lineNumber) {
+		this.lineNumber = lineNumber;
+		this.passengerCount = 0;
+		this.money = 0;
+	}
+
+	@Override
+    public void getIn(Passanger pass) {
+        this.passengerCount++;
+        this.money += 1500;
+        pass.withdraw(1500);
+        
+        System.out.println(this.toString());
+        System.out.println(pass.toString());
+    }
+
+    @Override
+    public void getOut(Passanger pass) {
+        this.passengerCount--;
+        
+        System.out.println(this.toString());
+        System.out.println(pass.toString()); 
+        System.out.println();
+    }
+    
+    @Override
+    public String toString() {
+        return "Bus lineNumber=" + lineNumber + ", passengerCount=" + passengerCount + ", money=" + money + "]";
+    }
+
+}

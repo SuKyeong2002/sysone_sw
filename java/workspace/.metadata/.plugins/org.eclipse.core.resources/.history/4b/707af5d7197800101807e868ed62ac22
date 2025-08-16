@@ -1,0 +1,12 @@
+package app.labs.servlet;
+
+
+// 빈 관례
+/*
+ * 1. 모든 멤버 변수는 private이어야 한다.
+ * 2. 기본 생성자가 제공되어야 한다.
+ * 3. getter, setter가 제공되어야 한다. 
+ */
+public class CalcBean {
+
+}

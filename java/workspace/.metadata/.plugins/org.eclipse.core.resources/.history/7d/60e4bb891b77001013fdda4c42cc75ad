@@ -1,0 +1,24 @@
+package app.labs.ex01;
+
+public class Student implements Passanger {
+    private int regNumber; // 승객을 구분하기 위한 필드
+    private String name;
+    private int money;
+    
+    // regNumber, name: 불변형 ()
+    public Student(int regNumber, String name) {
+		this.regNumber = regNumber;
+		this.name = name;
+		this.money = 0;
+	}
+
+	@Override
+    public void withdraw(int amount) {
+        this.money -= amount;
+    }
+
+    @Override
+    public void deposit(int amount) {
+        this.money += amount;
+    }
+}

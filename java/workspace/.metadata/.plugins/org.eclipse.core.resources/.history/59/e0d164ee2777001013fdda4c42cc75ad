@@ -1,0 +1,21 @@
+package app.labs.ex02.dp01;
+
+// 싱글톤 dp - 공용 객체 1개 생성
+public class Singleton {
+	// class 변수
+	private static Singleton singleton = null;
+	private int count = 0;
+	
+	// private 생성자
+	private Singleton() {
+		
+	}
+	
+	// class 메서드
+	public static Singleton getInstance() {
+		if (singleton == null) {
+			singleton = new Singleton();
+		}
+		return singleton;
+	}
+}

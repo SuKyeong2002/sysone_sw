@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\lect_labs\labs_java\workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2042605861.index
+3352579530.index
+508171128.index
+998883021.index
+1398381933.index
+583809351.index

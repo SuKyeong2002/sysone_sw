@@ -1,0 +1,11 @@
+package app.labs.ex02.dp02;
+
+public class Run200 extends RunningRace {
+
+	@Override
+	protected void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

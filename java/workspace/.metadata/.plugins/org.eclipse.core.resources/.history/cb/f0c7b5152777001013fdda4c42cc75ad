@@ -1,0 +1,14 @@
+package app.labs.ex02.dp01;
+
+// 싱글톤 dp - 공용 객체 1개 생성
+public class Singleton {
+	private static Singleton singleton = null;
+	
+	// 생성자
+	private Singleton() {
+		
+	}
+	
+	// 메서드
+	public 
+}

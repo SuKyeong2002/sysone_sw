@@ -1,0 +1,53 @@
+package app.labs.servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet("/servlet/CalcServlet")
+public class CalcServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public CalcServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 데이터 받기
+		int num1 = Integer.parseInt(request.getParameter("num1"));
+		int num2 = Integer.parseInt(request.getParameter("num2"));
+		String op = request.getParameter("num1");
+		
+		// 데이터 처리
+		int result = 0;
+		if (op.equals("+")) {
+			result = num1 + num2;
+		} else if (op.equals("-")) {
+			result = num1 - num2;
+		} else if (op.equals("*")) {
+			result = num1 * num2;
+		} else if (op.equals("/")) {
+			result = num1 / num2;
+		}
+		
+		// 출력
+		response.setContentType("text/html;charset=UTF-8"); // application/json
+		PrintWriter out = response.getWriter();
+		String html = "<html>";
+        html += "<head><title>계산결과</title></head>";
+        html += "<body><h1>계산결과</h1><h3>" + num1 + op + num2 + "=" + result + "</h3></body>";
+        html += "</html>";
+        
+        out.println(html);
+        out.close();
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,5 @@
+package app.labs.ex02.dp01;
+
+public class SignletonTest {
+
+}

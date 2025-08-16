@@ -1,0 +1,5 @@
+package app.labs.servlet;
+
+public class CalcService {
+
+}

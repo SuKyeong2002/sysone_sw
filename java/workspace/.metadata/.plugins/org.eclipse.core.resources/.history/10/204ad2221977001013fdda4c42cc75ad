@@ -1,0 +1,38 @@
+package app.labs.ex01;
+
+public class Bus implements Transportation{
+    
+    private int busNumber; 
+    private int passengerCount;
+    private int money;
+
+    public Bus(int busNumber) {
+    	this.busNumber = busNumber;
+	}
+
+	@Override
+    public void getIn(Passanger pass) {
+        this.passengerCount++;
+        this.money += 1000;
+        pass.withdraw(1000);
+        
+        System.out.println(this.toString());
+        System.out.println(pass.toString());
+        System.out.println();
+    }
+
+    @Override
+    public void getOut(Passanger pass) {
+        this.passengerCount--;
+        
+        System.out.println(this.toString());
+        System.out.println(pass.toString()); 
+        System.out.println();
+    }
+
+
+    @Override
+    public String toString() {
+        return "Bus busNumber=" + busNumber + ", passengerCount=" + passengerCount + ", money=" + money + "]";
+    }
+}

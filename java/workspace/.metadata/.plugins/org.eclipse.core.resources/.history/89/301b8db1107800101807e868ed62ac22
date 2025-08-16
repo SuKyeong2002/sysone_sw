@@ -1,0 +1,19 @@
+package app.labs.servlet;
+
+public class CalcService {
+	private int result = 0;
+	
+	// 생성자
+	public CalcService(int num1, int num2, String op) {
+		if (op.equals("+")) {
+			result = num1 + num2;
+		} else if (op.equals("-")) {
+			result = num1 - num2;
+		} else if (op.equals("*")) {
+			result = num1 * num2;
+		} else if (op.equals("/")) {
+			result = num1 / num2;
+		}
+	}
+
+}

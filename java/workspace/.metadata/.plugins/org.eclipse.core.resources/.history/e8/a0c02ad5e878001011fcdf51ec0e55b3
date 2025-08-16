@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- JSTL 추가 -->
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<h2>JSTL(JSP Standard Tag Library)</h2>
+		
+		<%-- 변수 --%> 
+		<c:set var="msg" value="안녕하세요." />
+		<h3>${msg}</h3>
+		<h3><c:out value="${msg}" /></h3>
+		<c:remove var="msg" />
+		
+		<c:catch var="ex">
+		<%
+			int c = 1 / 0;
+		
+		%>
+		</c:catch>
+		<h3>${ex}</h3>
+		
+		<c:set var="a" value="1" />
+	</body>
+</html>

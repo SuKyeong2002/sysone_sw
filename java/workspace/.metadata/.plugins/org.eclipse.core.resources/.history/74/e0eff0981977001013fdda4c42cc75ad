@@ -1,0 +1,17 @@
+package app.labs.ex01;
+
+public class Student {
+    private int regNumber; // 승객을 구분하기 위한 필드
+    private String name;
+    private int money;
+    
+    @Override
+    public void withdraw(int amount) {
+        this.money -= amount;
+    }
+
+    @Override
+    public void deposit(int amount) {
+        this.money += amount;
+    }
+}

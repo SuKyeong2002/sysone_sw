@@ -1,0 +1,6 @@
+package app.labs.ex01;
+
+public interface TransPortation {
+    void getIn(Passanger pass);
+    void getOut(Passanger pass);
+}

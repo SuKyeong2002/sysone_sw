@@ -1,0 +1,23 @@
+package app.labs.ex02.dp02;
+
+// 추상 class
+public abstract class RunningRace {
+	
+	// 추상 method
+	private void ready() {
+		System.out.println("준비");
+	}
+	
+	// 접근 불가능
+	protected abstract void run();
+	
+	// 추상 method
+	private void finish() {
+		System.out.println("결승선");
+	}
+	
+	// final: 수정 불가능
+	public final void race() {
+		
+	}
+}

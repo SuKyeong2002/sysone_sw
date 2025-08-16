@@ -1,0 +1,6 @@
+package app.labs.servlet;
+
+public class CalcService {
+	private int result = 0;
+
+}

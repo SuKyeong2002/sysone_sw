@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 수정 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+        
+        <!-- Service -->
+        <!-- <bean id="helloService" class="app.labs.ex04.aop01.HelloService" /> !-->
+        
+        <bean id="helloService" class="app.labs.ex04.aop01.HelloServiceProxy" />
+        
+        <!-- Controller (setter 주입) -->
+        <bean id="helloController" class="app.labs.ex04.aop01.HelloController">
+        		<constructor-arg ref="helloService" />
+        </bean>
+        
+        <!-- 공통코드: Aspect -->
+        <bean id="helloLog" class="app.labs.ex04.aop01.HelloLog" />
+        
+        <!--  핵심코드에 공통코드를 실행할 시점을 지정 -->
+        <aop:config>
+        		<!-- 핵심코드(joinpoint)의 pointcut 지정 -->
+        		<aop:pointcut expression="execution(* app.labs.ex04..HelloService.sayHello(..))" id="helloPoint" />
+        		
+        		<!-- 포인트 컷에 지정할 공통코드와 시점을 지정 -->
+        		<aop:aspect ref="helloLog">
+        			<!-- <aop:before method="log" pointcut-ref="helloPoint" /> -->
+        			<!-- <aop:after-returning method="resultLog" pointcut-ref="helloPoint" returning="resultObject" />  -->
+        			<!-- <aop:after-throwing method="exceptionLog" pointcut-ref="helloPoint" throwing="exception" /> -->
+        			<aop:around method="aroundLog" pointcut-ref="helloPoint" />
+        		</aop:aspect>
+        </aop:config>
+
+</beans>

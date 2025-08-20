@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 스프링 빈의 의존성 설정 -->
+	
+	<!-- 4) 기본: HelloService 빈 객체 생성 -->
+	<!-- bean: container (생명주기), 무언가 넘기고 싶을 때 사용 -->
+	<bean id="helloService" class="app.labs.ex03.di01.HelloServiceTest" />
+	
+	<!-- 5) 생성자: spring 이 생성 시점 정해줌 -->
+	<bean id="helloController" class="app.labs.ex03.di01.HelloController">
+		<constructor-arg ref="helloService" />
+	</bean>
+
+	<!-- 6) Setter -->
+	<!-- property: getter, setter 가짐 -->
+	<!-- Setter 중 helloService 불러옴 -->
+	<bean id="helloController2" class="app.labs.ex03.di01.HelloController">
+		<property name="helloService" ref="helloService" />
+	</bean>
+	
+	<!-- 7) Bean -->
+	<bean id="helloController3" p:helloService-ref="helloService" class="app.labs.ex03.di01.HelloController" />
+</beans>

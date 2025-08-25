@@ -23,7 +23,7 @@
     </bean>
     
     <!-- component-scan으로 context 사용 -->
-    <context:component-scan base-package="app.labs.ex07.fileupload"/>
+    <context:component-scan base-package="app.labs.ex06.mvc02"/>
     
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>

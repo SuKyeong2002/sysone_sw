@@ -81,7 +81,7 @@ public class EmpRepository implements IEmpRepository {
 	public void insertEmp(Emp emp) {
 		String sql = "insert into employees "
 				+ "(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) "
-				+ "(?, ?, ?, ?, ?, sysdate, ?, ?, ?, ?, ?)";
+				+ "VALUES (?, ?, ?, ?, ?, sysdate, ?, ?, ?, ?, ?)";
 		
 		jdbcTemplate.update(sql, 
 				emp.getEmployeeId(),
@@ -95,22 +95,30 @@ public class EmpRepository implements IEmpRepository {
                   emp.getManagerId(),
                   emp.getDepartmentId());
 	}
-
+	
 	@Override
 	public void updateEmp(Emp emp) {
-		String sql = """
-				update employees
-				set first_name=?, last_name=?, email=?, salary=?
-				where employee_id=?;
-				""";
-		
-		jdbcTemplate.update(sql,
-				emp.getFirstName(),
-                emp.getLastName(),
-                emp.getEmail(),
-                emp.getSalary(),
-                emp.getEmployeeId()
-				);
+	    String sql = """
+	            update employees
+	            set first_name=?, last_name=?, email=?, phone_number=?, 
+	                hire_date=?, job_id=?, salary=?, commission_pct=?, 
+	                manager_id=?, department_id=?
+	            where employee_id=?
+	            """;
+
+	    jdbcTemplate.update(sql,
+	            emp.getFirstName(),
+	            emp.getLastName(),
+	            emp.getEmail(),
+	            emp.getPhoneNumber(),
+	            emp.getHireDate(),
+	            emp.getJobId(),
+	            emp.getSalary(),
+	            emp.getCommissionPct(),
+	            emp.getManagerId(),
+	            emp.getDepartmentId(),
+	            emp.getEmployeeId()
+	    );
 	}
 
 	@Override
@@ -133,7 +141,7 @@ public class EmpRepository implements IEmpRepository {
 
 	@Override
 	public List<Map<String, Object>> getAllJobId() {
-		String sql = "select JOB_ID as jobId, JOB_TITLE as jobTitle from jobs";
+		String sql = "select JOB_ID as job_id, JOB_TITLE as job_title from jobs";
 		return jdbcTemplate.queryForList(sql);
 	}
 

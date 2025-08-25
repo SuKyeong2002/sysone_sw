@@ -13,6 +13,7 @@
 			<h1> 사원목록 </h1>
 			<!-- /hr/insert -->
 			<a href="<c:url value='/hr/insert' />">신규사원등록</a>
+			${message }
 			<table border="1">
 				<thead>
 					<tr>

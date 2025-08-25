@@ -14,31 +14,15 @@
         <annotation-driven />
         
         <!-- get 경로 매핑 -->
-        <resources mapping="/js/" location="/WEB-INF/assets/js/" />
-    		<resources mapping="/images/" location="/WEB-INF/assets/images/" />
+        <resources mapping="/js/**" location="/WEB-INF/assets/js/" />
+    		<resources mapping="/images/**" location="/WEB-INF/assets/images/" />
     		
     		<!-- View Resolver 설정 -->
     		<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        		<beans:property name="prefix" value="/WEB-INF/views/mvc02/" />
+        		<beans:property name="prefix" value="/WEB-INF/views/fileupload/" />
         		<beans:property name="suffix" value=".jsp" />
     		</beans:bean>
-    		
-    		<!-- Mapping Handler 설정 -->
-    		<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
-        <beans:property name="messageConverters">
-            <beans:list>
-                <beans:bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-                    <beans:property name="supportedMediaTypes">
-                        <beans:list>
-                            <!-- beans:value>text/html;charset=UTF-8</beans:value -->
-                            <beans:value>application/json;charset=UTF-8</beans:value>
-                        </beans:list>
-                    </beans:property>
-                </beans:bean>
-            </beans:list>
-        </beans:property>
-    </beans:bean>
     
         <!-- component-scan으로 context 사용 -->
-    <context:component-scan base-package="app.labs.ex06.mvc02"/>
+    <context:component-scan base-package="app.labs.ex07.fileupload"/>
 </beans:beans>

@@ -71,7 +71,7 @@ public class EmpService implements IEmpService {
 	@Override
 	public List<Map<String, Object>> getAllJobId() {
 		// TODO Auto-generated method stub
-		return empRepository.getAllManagerId();
+		return empRepository.getAllJobId();
 	}
 
 	@Override

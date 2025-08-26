@@ -19,7 +19,7 @@
     		
     		<!-- View Resolver 설정 -->
     		<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        		<beans:property name="prefix" value="/WEB-INF/views/mvc02/" />
+        		<beans:property name="prefix" value="/WEB-INF/views/fileupload/" />
         		<beans:property name="suffix" value=".jsp" />
     		</beans:bean>
     		
@@ -49,5 +49,5 @@
    
     
         <!-- component-scan으로 context 사용 -->
-    <context:component-scan base-package="app.labs.ex06.mvc02"/>
+    <context:component-scan base-package="app.labs.ex07.mvc02, app.labs.ex07.fileupload"/>
 </beans:beans>

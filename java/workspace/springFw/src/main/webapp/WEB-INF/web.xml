@@ -70,6 +70,15 @@
    		<location>/WEB-INF/views/mvc02/error/runtime.jsp</location>
    </error-page>
    -->
+   
+   <!-- jsp config -->
+  <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <trim-directive-whitespaces>true</trim-directive-whitespaces>
+        </jsp-property-group>
+    </jsp-config>
+  
   
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>

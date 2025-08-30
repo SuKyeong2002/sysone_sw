@@ -1,0 +1,160 @@
+<!-- 추가 -->
+<html xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/dept/default_layout}">
+	
+	<!-- content : 가운데 정렬  -->
+	<div layout:fragment="content">
+	
+		<!-- 헤더 -->
+		<h1>부서목록 API</h1>
+		
+		<!-- 테이블 -->
+		<table border="1" class="table table-striped-columns" id="dept_table">
+			<thead>
+				<tr>
+					<th>부서번호</th>
+					<th>부서명</th>
+					<th>위치</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+		
+		<div>
+			<form action="./insert" method="post" id="frmForm">
+			<ul>
+				<li>
+					<label>부서번호: <input id="deptNo" name="deptNo" type="number" min="0" max="100" step="10" required onkeydown="return false"></label>
+				</li>
+				<li>
+					<label>부서명: <input id="dName" name="dName" type="text" maxlength="20" required></label>
+				</li>
+				<li>
+					<label>위치: <input id="loc" name="loc"  type="text" maxlength="20" required></label>
+				</li>
+			</ul>
+			
+			<button id="btnNew" type="submit" class="btn btn-primary btn-sm">
+				<i class="bi bi-pencil"></i>
+				신규등록
+			</button>
+			<button id="btnUpdate" type="submit" class="btn btn-primary btn-sm">
+				<i class="bi bi-check"></i>
+				수정저장
+			</button>
+			<button id="btnDelete" type="submit" class="btn btn-danger btn-sm">
+				<i class="bi bi-trash"></i>삭제
+			</button>
+			<button type="button" class="btn btn-light btn-sm" onclick="location.href='/api/depts/index'">
+				<i class="bi bi-arrow-repeat"></i>
+				초기화
+			</button>
+			</form>
+		</div>
+	</div>
+	
+	<!-- js -->
+	<div layout:fragment="script">
+		<script>
+			
+			// 부서 목록 조회
+			function getList() {
+				$.get('/api/depts/', {}, function() {
+					console.log('로딩중');
+				})
+				.done(function(data){
+					console.log(data);
+					
+					let result = '';
+					
+					for(dept of data.deptList) {
+						result += `
+							<tr>
+								<td>${dept.deptNo}</td>
+								<td><a href="#" class="details" data-deptNo="${dept.deptNo}">${dept.dname}</a></td>
+								<td>${dept.loc}</td>
+							</tr>
+						`;
+					}
+					
+					$('#dept_table > tbody').empty().append(result);
+				});
+			}
+			
+			// 부서 목록 상세 조회
+			function getDetail(deptno) {
+				$.get('/api/depts/'+deptno, {}, function() {
+					console.log('로딩중');
+				})
+				.done(function(data){
+					$('#deptNo').val(data.deptNo);
+					$('#dName').val(data.dname);
+					$('#loc').val(data.loc);
+				});
+			}
+			
+		
+			$(document).ready(function(){
+				getList();
+			})
+			
+			// js → mamory → dynamic
+			.on('click', '.details', function(e){
+				 e.preventDefault();
+				const deptno = $(this).attr('data-deptNo');
+				console.log(deptno);
+				getDetail(deptno);
+			});
+			
+		
+			// e: frmForm의 이벤트 젇보 
+			// event: 어떤 버튼이 클릭되었는지 확인
+			$('#frmForm').on('submit', function(e){
+			    const btn = event.submitter.id;
+			    console.log(btn);
+			    e.preventDefault();
+			    
+			   /*
+			    const url = {
+			        'btnNew':'/dept/insert',
+			        'btnUpdate':'/dept/update',
+			        'btnDelete':'/dept/delete',
+			    }
+			   */
+			   
+			    const method = {
+				        'btnNew':'POST',
+				        'btnUpdate':'PUT',
+				        'btnDelete':'DELETE',
+				    };
+			   
+			   let deptno = '';
+			   if (method[btn] === 'DELETE')
+				   deptno = $('#deptNo').val();
+			   
+			   $.ajax({
+				   type: method[btn],
+				   url: '/api/depts/',
+				   data: $('#frmForm').serialize(),
+				   success: function(result) {
+					   console.log(result);
+					   getList();
+						$('#deptNo').val('');
+						$('#dName').val('');
+						$('#loc').val('');
+					   
+				   },
+				   error: function(request, status, error) {
+					   console.log(error);
+				   }
+			   })
+			   
+			    
+			    // $(this).attr({'action':url[btn]}).unbind('submit').submit();
+			});
+		</script>
+	</div>
+</html>

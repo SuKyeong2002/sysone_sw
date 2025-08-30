@@ -25,7 +25,8 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             <!--/WEB-INF/spring/mvc02/root-context.xml-->
-            /WEB-INF/spring/fileupload/root-context.xml
+            <!--/WEB-INF/spring/fileupload/root-context.xml-->
+            classpath:/config/mybatis/root-context.xml
         </param-value>
     </context-param>
     
@@ -41,7 +42,8 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>
                 <!--/WEB-INF/spring/mvc02/servlet-context.xml-->
-                /WEB-INF/spring/fileupload/servlet-context.xml
+                <!--/WEB-INF/spring/fileupload/servlet-context.xml-->
+                classpath:/config/mybatis/servlet-context.xml
             </param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>

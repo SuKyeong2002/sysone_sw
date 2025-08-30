@@ -1,0 +1,44 @@
+package app.labs.ex01;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TemplateServiceImpl implements TemplateService {
+
+	private List<String> list;
+	private Map<String, String> map;
+	private UserAccount userAccount;
+	
+	// 초기화 (자바 9 이상)
+	public TemplateServiceImpl() {
+		list = List.of("A", "B", "C", "D", "E");
+        map = Map.of(
+                "A", "가",
+                "B", "나",
+                "C", "다",
+                "D", "라",
+                "E", "마"
+        );
+
+        this.userAccount = new UserAccount("1", "user", "1234", "사용자", "ROLE_USER", null, "1");
+	}
+		
+	@Override
+	public List<String> getList() {
+		return this.list;
+	}
+
+	@Override
+	public Map<String, String> getMap() {
+		return this.map;
+	}
+
+	@Override
+	public UserAccount getUserAccount() {
+		return this.userAccount;
+	}
+
+}

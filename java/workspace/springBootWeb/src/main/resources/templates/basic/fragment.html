@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		<div th:fragment="frag01">
+			<h4>fragment</h4>
+			
+		</div>
+		
+		<div th:fragment="frag02(p1, p2)">
+			<h4>Param</h4>
+			<div th:text="${p1}"></div>
+			<div th:text="${p2}"></div>
+		</div>
+		
+		<div th:fragment="frag03(title)">
+			<h4>Param</h4>
+			<div th:replace="${title}">Param</div>
+		</div>
+	</body>
+</html>

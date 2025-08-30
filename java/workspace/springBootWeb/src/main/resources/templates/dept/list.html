@@ -1,0 +1,84 @@
+<!-- 추가 -->
+<html xmlns:th="http://www.thymeleaf.org/"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/dept/default_layout}">
+	
+	<!-- content : 가운데 정렬  -->
+	<div layout:fragment="content">
+	
+		<!-- 헤더 -->
+		<h1>부서 목록</h1>
+		
+		<!-- 테이블 -->
+		<table border="1" class="table table-striped-columns">
+			<thead>
+				<tr>
+					<th>부서번호</th>
+					<th>부서명</th>
+					<th>위치</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dept: ${deptList}">
+					<td th:text="${dept.deptNo}"></td>
+					<td><a th:href="@{/dept/list/{id}(id=${dept.deptNo})}" 
+							th:text="${dept.dName}"></a></td>
+					<td th:text="${dept.loc}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div>
+			<form action="./insert" method="post" id="frmForm">
+			<ul th:object="${dept}">
+				<li>
+					<label>부서번호: <input type="number" th:field="*{deptNo}" min="0" max="100" step="10" required onkeydown="return false"></label>
+				</li>
+				<li>
+					<label>부서명: <input type="text" th:field="*{dName}" maxlength="20" required></label>
+				</li>
+				<li>
+					<label>위치: <input type="text" th:field="*{loc}" maxlength="20" required></label>
+				</li>
+			</ul>
+			
+			<button id="btnNew" type="submit" class="btn btn-primary btn-sm">
+				<i class="bi bi-pencil"></i>
+				신규등록
+			</button>
+			<button id="btnUpdate" type="submit" class="btn btn-primary btn-sm">
+				<i class="bi bi-check"></i>
+				수정저장
+			</button>
+			<button id="btnDelete" type="submit" class="btn btn-danger btn-sm">
+				<i class="bi bi-trash"></i>삭제
+			</button>
+			<button type="button" class="btn btn-light btn-sm" onclick="location.href='/dept/list'">
+				<i class="bi bi-arrow-repeat"></i>
+				초기화
+			</button>
+			</form>
+		</div>
+	</div>
+	
+	<!-- js -->
+	<div layout:fragment="script">
+		<!-- e: frmForm의 이벤트 젇보 -->
+		<!-- event: 어떤 버튼이 클릭되었는지 확인 -->
+		<script>
+			$('#frmForm').on('submit', function(e){
+			    const btn = event.submitter.id;
+			    console.log(btn);
+			    e.preventDefault();
+			    
+			    const url = {
+			        'btnNew':'/dept/insert',
+			        'btnUpdate':'/dept/update',
+			        'btnDelete':'/dept/delete',
+			    }
+			    
+			    $(this).attr({'action':url[btn]}).unbind('submit').submit();
+			});
+		</script>
+	</div>
+</html>

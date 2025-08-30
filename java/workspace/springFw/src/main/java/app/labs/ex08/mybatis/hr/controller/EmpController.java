@@ -1,21 +1,17 @@
-package app.labs.ex06.mvc02.hr.controller;
+package app.labs.ex08.mybatis.hr.controller;
 
-import java.sql.SQLException;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import app.labs.ex06.mvc02.hr.model.Emp;
-import app.labs.ex06.mvc02.hr.service.IEmpService;
+import app.labs.ex08.mybatis.hr.model.Emp;
+import app.labs.ex08.mybatis.hr.service.IEmpService;
 import groovy.util.logging.Slf4j;
 
 @Slf4j
@@ -146,15 +142,15 @@ public class EmpController {
 	 * 신규 사원 수정 요청
 	 */
 	@RequestMapping(value="/hr/delete", method=RequestMethod.POST)
-	public String deleteEmp(int employeeId, String email, Model model, RedirectAttributes redirectAttributes) {
+	public String deleteEmp(int empid, String email, Model model, RedirectAttributes redirectAttributes) {
 		
 		try {
-			int cnt = empService.deleteEmp(employeeId, email);
+			int cnt = empService.deleteEmp(empid, email);
 			
 			if (cnt > 0) {
-				redirectAttributes.addFlashAttribute("message", employeeId+ "번 사원정보가 삭제되었습니다.");
+				redirectAttributes.addFlashAttribute("message", empid+ "번 사원정보가 삭제되었습니다.");
 			} else {
-				model.addAttribute("emp", empService.getEmpInfo(employeeId));
+				model.addAttribute("emp", empService.getEmpInfo(empid));
 				model.addAttribute("message", "사번 또는 이메일 주소가 다릅니다.");
 				
 				return "hr/deleteForm";
@@ -189,9 +185,9 @@ public class EmpController {
 	/*
 	 * json로 특정 사원 조회
 	 */
-	@RequestMapping(value="/hr/json/{employeeId}")
-	public @ResponseBody Emp getEmpInfoJson(@PathVariable int employeeId, Model model) {	
-		Emp emp = empService.getEmpInfo(employeeId);
+	@RequestMapping(value="/hr/json/{empid}")
+	public @ResponseBody Emp getEmpInfoJson(@PathVariable int empid, Model model) {	
+		Emp emp = empService.getEmpInfo(empid);
 		
 		return emp;
 	}

@@ -137,7 +137,7 @@
 			   
 			   $.ajax({
 				   type: method[btn],
-				   url: '/api/depts/',
+				   url: '/api/depts/' + deptno,
 				   data: $('#frmForm').serialize(),
 				   success: function(result) {
 					   console.log(result);

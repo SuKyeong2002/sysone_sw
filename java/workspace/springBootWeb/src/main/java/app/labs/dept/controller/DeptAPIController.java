@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import app.labs.dept.model.Dept;
 import app.labs.dept.service.DeptService;
@@ -95,23 +94,21 @@ public class DeptAPIController {
 	}
 	
 	@DeleteMapping("/{deptno}")
-	Map<String, Object> deleteDept(@PathVariable("deptno") int deptno, Model model) {
-		Map<String, Object> resultMap = new HashMap<>();
+	public Map<String, Object> deleteDept(@PathVariable("deptno") int deptno) {
+	    Map<String, Object> resultMap = new HashMap<>();
 
-		try {
-			int cnt = deptService.deleteDept(deptno);
-			
-			if (cnt > 0) {
-				resultMap.put("message", deptno + "번 부서가 삭제되었습니다.");
-			}
-			else {
-				resultMap.put("message", "부서번호가 다릅니다.");
-			}
-		}
-		catch(RuntimeException ex) {
-			resultMap.put("message", ex.getMessage());
-		}
-		
-		return resultMap;
+	    try {
+	        int cnt = deptService.deleteDept(deptno);
+	        if (cnt > 0) {
+	            resultMap.put("message", deptno + "번 부서가 삭제되었습니다.");
+	        } else {
+	            resultMap.put("message", "해당 부서번호가 존재하지 않습니다.");
+	        }
+	    } catch (RuntimeException ex) {
+	        resultMap.put("message", ex.getMessage());
+	    }
+
+	    return resultMap;
 	}
+
 }

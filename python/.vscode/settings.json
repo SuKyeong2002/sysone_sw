@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "editor.wordWrap": "on",
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "python.terminal.executeInFileDir": false,
+}

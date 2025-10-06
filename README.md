@@ -16,4 +16,4 @@
 ### 2. 실무 프로젝트
 - 1차 미니 프로젝트 (2주 - Java, JavaFx, Oracle)
 - 2차 미니 프로젝트 (2주 - Java, JSP, Oracle)
-- 3차 최종 프로젝트 
+- 3차 최종 프로젝트 (2달 - Java, React, Oracle)
